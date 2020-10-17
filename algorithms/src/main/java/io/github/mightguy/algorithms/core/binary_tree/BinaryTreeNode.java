@@ -1,4 +1,4 @@
-package io.github.mightguy.algorithms.trees;
+package io.github.mightguy.algorithms.core.binary_tree;
 
 /**
  * Generic Node of a binary Tree.
@@ -8,12 +8,12 @@ package io.github.mightguy.algorithms.trees;
  * 3. Reference of the Left Child
  * @param <T> Generic Node where T is the Class type
  */
-public class Node<T> {
+public class BinaryTreeNode<T> {
     public T data;
-    public Node left;
-    public Node right;
+    public BinaryTreeNode left;
+    public BinaryTreeNode right;
 
-    public Node(T data) {
+    public BinaryTreeNode(T data) {
         this.data = data;
     }
 }

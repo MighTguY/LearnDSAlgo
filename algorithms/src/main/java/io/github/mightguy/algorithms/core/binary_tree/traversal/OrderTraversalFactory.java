@@ -1,4 +1,4 @@
-package io.github.mightguy.algorithms.trees.traversal;
+package io.github.mightguy.algorithms.core.binary_tree.traversal;
 
 import java.util.HashMap;
 import java.util.Map;

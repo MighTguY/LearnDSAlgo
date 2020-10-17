@@ -1,7 +1,8 @@
 package io.github.mightguy.algorithms;
 
-import io.github.mightguy.algorithms.trees.BinaryTree;
-import io.github.mightguy.algorithms.trees.Node;
+import io.github.mightguy.algorithms.core.binary_tree.BinaryTree;
+import io.github.mightguy.algorithms.core.binary_tree.BinaryTreeNode;
+import io.github.mightguy.algorithms.core.binary_tree.IterativeBinaryTree;
 
 public class Main {
 
@@ -17,13 +18,13 @@ public class Main {
      * Inorder -> 3140526
      */
     public void binaryTreeTraversal() {
-        BinaryTree<Integer> binaryTree = new BinaryTree<>(new Node<>(0));
-        binaryTree.add(new Node<>(1));
-        binaryTree.add(new Node<>(2));
-        binaryTree.add(new Node<>(3));
-        binaryTree.add(new Node<>(4));
-        binaryTree.add(new Node<>(5));
-        binaryTree.add(new Node<>(6));
+        BinaryTree<Integer> binaryTree = new IterativeBinaryTree<>(new BinaryTreeNode<>(0));
+        binaryTree.add(new BinaryTreeNode<>(1));
+        binaryTree.add(new BinaryTreeNode<>(2));
+        binaryTree.add(new BinaryTreeNode<>(3));
+        binaryTree.add(new BinaryTreeNode<>(4));
+        binaryTree.add(new BinaryTreeNode<>(5));
+        binaryTree.add(new BinaryTreeNode<>(6));
 
         System.out.println(binaryTree.preOrderTraversal());
         System.out.println(binaryTree.postOrderTraversal());
