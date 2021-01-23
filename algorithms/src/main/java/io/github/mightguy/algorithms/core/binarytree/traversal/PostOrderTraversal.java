@@ -1,7 +1,7 @@
 package io.github.mightguy.algorithms.core.binarytree.traversal;
 
 
-import io.github.mightguy.algorithms.core.binarytree.BinaryTreeNode;
+import io.github.mightguy.algorithms.core.binarytree.commons.BinaryTreeNode;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;

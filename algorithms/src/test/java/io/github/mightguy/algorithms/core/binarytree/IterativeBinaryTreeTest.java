@@ -70,4 +70,9 @@ class IterativeBinaryTreeTest {
     assertEquals(7, binaryTree.size());
   }
 
+  @Test
+  public void testDepth() {
+    assertEquals(3, binaryTree.height());
+  }
+
 }

@@ -1,4 +1,4 @@
-package io.github.mightguy.algorithms.core.binarytree.traversal;
+package io.github.mightguy.algorithms.core.binarytree.commons;
 
 public enum TraversalType {
   INORDER,

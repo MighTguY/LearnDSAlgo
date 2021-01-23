@@ -1,7 +1,8 @@
 package io.github.mightguy.algorithms.core.binarytree;
 
+import io.github.mightguy.algorithms.core.binarytree.commons.BinaryTreeNode;
 import io.github.mightguy.algorithms.core.binarytree.traversal.OrderTraversalFactory;
-import io.github.mightguy.algorithms.core.binarytree.traversal.TraversalType;
+import io.github.mightguy.algorithms.core.binarytree.commons.TraversalType;
 import java.util.List;
 
 public abstract class BinaryTree<T extends Comparable> {
@@ -75,4 +76,8 @@ public abstract class BinaryTree<T extends Comparable> {
   abstract public boolean contains(T data);
 
   abstract public int size();
+
+  abstract public int height();
+
+//  abstract BinaryTreeNode<T> delete(T data);
 }

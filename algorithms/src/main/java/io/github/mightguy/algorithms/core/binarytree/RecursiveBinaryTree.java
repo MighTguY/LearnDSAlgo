@@ -1,6 +1,6 @@
 package io.github.mightguy.algorithms.core.binarytree;
 
-import io.github.mightguy.algorithms.core.binarytree.traversal.TraversalType;
+import io.github.mightguy.algorithms.core.binarytree.commons.TraversalType;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,26 +21,37 @@ public class RecursiveBinaryTree<T extends Comparable> extends BinaryTree<T> {
    */
   @Override
   public void add(BinaryTreeNode<T> node) {
-    if (root == null) {
-      root = node;
-      return;
-    }
-    addWithHelper(root, node);
+    root = insert(root, node);
   }
 
-  private void addWithHelper(BinaryTreeNode<T> root, BinaryTreeNode<T> node) {
-    if (root.data.compareTo(node.data) > 0) {
-      if (root.left == null) {
-        root.left = node;
+  private BinaryTreeNode<T> insert(BinaryTreeNode<T> root, BinaryTreeNode<T> node) {
+    if (root == null) {
+      return node;
+    }
+    if (root.rchildCount == root.lchildCount) {
+      root.left = insert(root.left, node);
+      root.lchildCount += 1;
+    } else if (root.rchildCount < root.lchildCount) {
+      if (isPBT(root.lchildCount)) {
+        root.right = insert(root.right, node);
+        root.rchildCount += 1;
       } else {
-        addWithHelper(root.right, node);
+        root.left = insert(root.left, node);
+        root.lchildCount += 1;
       }
+    }
+    return root;
+  }
+
+  private boolean isPBT(int count) {
+    count = count + 1;
+    while (count % 2 == 0) {
+      count = count / 2;
+    }
+    if (count == 1) {
+      return true;
     } else {
-      if (root.right == null) {
-        root.right = node;
-      } else {
-        addWithHelper(root.right, node);
-      }
+      return false;
     }
   }
 
@@ -53,7 +64,6 @@ public class RecursiveBinaryTree<T extends Comparable> extends BinaryTree<T> {
 
   @Override
   public boolean contains(T data) {
-
     return findRecursive(root, data);
   }
 
@@ -77,4 +87,19 @@ public class RecursiveBinaryTree<T extends Comparable> extends BinaryTree<T> {
     int rightTreeSize = root.right == null ? 0 : size(root.right);
     return 1 + leftTreeSize + rightTreeSize;
   }
+
+  @Override
+  public int height() {
+    return height(root);
+  }
+
+  private int height(BinaryTreeNode<T> root) {
+    if (root == null) {
+      return 0;
+    }
+    int leftDepth = root.left == null ? 0 : height(root.left);
+    int rightDepth = root.right == null ? 0 : height(root.right);
+    return (leftDepth > rightDepth) ? leftDepth + 1 : rightDepth + 1;
+  }
+
 }

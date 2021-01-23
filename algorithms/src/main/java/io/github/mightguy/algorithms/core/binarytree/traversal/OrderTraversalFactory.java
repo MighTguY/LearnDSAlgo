@@ -1,5 +1,6 @@
 package io.github.mightguy.algorithms.core.binarytree.traversal;
 
+import io.github.mightguy.algorithms.core.binarytree.commons.TraversalType;
 import java.util.HashMap;
 import java.util.Map;
 

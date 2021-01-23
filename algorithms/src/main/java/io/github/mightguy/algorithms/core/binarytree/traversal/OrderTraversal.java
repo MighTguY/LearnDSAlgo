@@ -1,6 +1,6 @@
 package io.github.mightguy.algorithms.core.binarytree.traversal;
 
-import io.github.mightguy.algorithms.core.binarytree.BinaryTreeNode;
+import io.github.mightguy.algorithms.core.binarytree.commons.BinaryTreeNode;
 import java.util.List;
 
 public interface OrderTraversal<T extends Comparable> {

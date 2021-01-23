@@ -1,4 +1,4 @@
-package io.github.mightguy.algorithms.core.binarytree;
+package io.github.mightguy.algorithms.core.binarytree.commons;
 
 /**
  * Generic Node of a binary Tree. Every Binary Tree Node has 3 things to hold, 1. Data of Type T 2.
@@ -11,6 +11,8 @@ public class BinaryTreeNode<T extends Comparable> {
   public T data;
   public BinaryTreeNode<T> left;
   public BinaryTreeNode<T> right;
+  public int lchildCount;
+  public int rchildCount;
 
   public BinaryTreeNode(T data) {
     this.data = data;

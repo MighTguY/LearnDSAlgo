@@ -62,4 +62,10 @@ class RecursiveBinaryTreeTest {
   public void testSize() {
     assertEquals(7, binaryTree.size());
   }
+
+  @Test
+  public void testDepth() {
+    log.info("Its a right skew tree");
+    assertEquals(7, binaryTree.height());
+  }
 }

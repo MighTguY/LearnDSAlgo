@@ -1,7 +1,7 @@
 package io.github.mightguy.algorithms;
 
 import io.github.mightguy.algorithms.core.binarytree.BinaryTree;
-import io.github.mightguy.algorithms.core.binarytree.BinaryTreeNode;
+import io.github.mightguy.algorithms.core.binarytree.commons.BinaryTreeNode;
 import io.github.mightguy.algorithms.core.binarytree.IterativeBinaryTree;
 
 public class Main {
